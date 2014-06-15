@@ -12,6 +12,7 @@ Steps.taken <- aggregate(steps ~ date, data = activity, FUN = sum)
 barplot(Steps.taken$steps, names.arg = Steps.taken$date, xlab = "date", ylab = "steps")
 mean(Steps.taken$steps)
 median(Steps.taken$steps)
+echo = TRUE
 ```
 
 
@@ -20,6 +21,7 @@ median(Steps.taken$steps)
 average.activity <- aggregate(steps ~ interval, data = activity, FUN = mean)
 plot(average.activity, type = "l")
 average.activity$interval[which.max(average.activity$steps)]
+echo = TRUE
 ```
 
 ## Imputing missing values
@@ -35,6 +37,7 @@ step.date <- aggregate(steps ~ date, data = activity, FUN = sum)
 barplot(step.date$steps, names.arg = step.date$date, xlab = "date", ylab = "steps")
 mean(step.date$steps)
 median(step.date$steps)
+echo = TRUE
 ```
 
 
@@ -55,6 +58,6 @@ for (type in c("weekend", "weekday")) {
                             type, FUN = mean)
   plot(steps.type, type = "l", main = type)
 }
-
+echo = TRUE
 ```
 
